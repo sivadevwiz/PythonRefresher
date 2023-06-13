@@ -2,6 +2,7 @@
 
 from enum import Enum
 
+
 # Enums are used to create constants
 
 class State(Enum):
@@ -9,11 +10,11 @@ class State(Enum):
     ACTIVE = 1
 
 
-print("State.ACTIVE.....", State.ACTIVE)
-print("State.INACTIVE.......", State.INACTIVE)
+print("State.ACTIVE.....", State.ACTIVE)  # State.ACTIVE - gives only the enum and not the value
+print("State.INACTIVE.......", State.INACTIVE)  # State.INACTIVE - gives only the enum and not the value
 # .value only will give the value of the enum
-print("State.ACTIVE.value.....", State.ACTIVE.value)
-print("State.ACTIVE.name.......", State.ACTIVE.name)
+print("State.ACTIVE.value.....", State.ACTIVE.value)  # 1
+print("State.ACTIVE.name.......", State.ACTIVE.name)  # ACTIVE
 
 print("State(0).........", State(0))
 print("State(1).........", State(1))
@@ -25,5 +26,5 @@ print("State['ACTIVE'].........", State['ACTIVE'])  # State.ACTIVE
 print("State('1').........", State(1))  # State.ACTIVE
 print("State('0').........", State(0))  # State.INACTIVE
 
-print("list(State).....", list(State)) # [<State.INACTIVE: 0>, <State.ACTIVE: 1>]
-print("len(State).....", len(State)) # 2
+print("list(State).....", list(State))  # [<State.INACTIVE: 0>, <State.ACTIVE: 1>]
+print("len(State).....", len(State))  # 2

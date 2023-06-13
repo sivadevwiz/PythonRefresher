@@ -1,5 +1,5 @@
 list_one = [1, 2, 3]
-list_two = ["one", 2, "three", True]
+list_two = ["one", 2, "three", True]  # Lists can have different data types
 
 print(list_one)  # [1, 2, 3]
 print(list_two)  # ['one', 2, 'three', True]
@@ -8,7 +8,7 @@ print("three" in list_two)  # True
 print(False in list_two)  # False
 print(True in list_two)  # True
 
-print(list_two[2])  # three
+print(list_two[2])  # three - reference using index
 
 list_two[2] = "two"  # changes the value
 
@@ -58,9 +58,9 @@ list_one[1:5] = ["6", "7"]  # it slices the index on higher range
 print(list_one)
 
 # Sort
-# data types should be same in the List
+# ⚠ IMPORTANT! data types should be same in the List
 list_three = [1, 24, 13, 54, 25]
-print(list_three.sort())  # None
+print("list_three.sort().........", list_three.sort())  # None as it's only a statement and not an expression
 
 list_three.sort()
 print(list_three)  # [1, 13, 24, 25, 54]
@@ -74,17 +74,48 @@ character_names = ['James', "Jackie", "JAckie", "jackie", 'Natal', 'Boris', 'Xen
 character_names.sort()
 print(character_names)  # ['Alec', 'Boris', 'JAckie', 'Jackie', 'James', 'Natal', 'Xenia', 'jackie']
 
-character_names.sort(key=str.lower) # fixes the issue of sorting
-print(character_names) # ['Alec', 'Boris', 'JAckie', 'Jackie', 'jackie', 'James', 'Natal', 'Xenia']
+character_names.sort(key=str.lower)  # fixes the issue of sorting - "jackie" is included in the order
+print("key=str.lower....",
+      character_names)  # ['Alec', 'Boris', 'JAckie', 'Jackie', 'jackie', 'James', 'Natal', 'Xenia']]
 
-#copying the items
+character_names.sort(key=str.upper)  # Same result as above
+print("key=str.upper....",
+      character_names)  # ['Alec', 'Boris', 'JAckie', 'Jackie', 'jackie', 'James', 'Natal', 'Xenia']
+
+# copying the items
 list_four = ["d", "a", "z", "s"]
 list_five = list_four[:]
+# list_four.sort()
 list_five.sort()
-print(list_four)
-print(list_five)
+print("original list........", list_four)
+print("sorted list........", list_five)
 
-# Global function - creates new List instead of modifying the original list
+# Global function "sorted" - creates new List instead of modifying the original list
 print(sorted(list_four))
 print(sorted(list_four, key=str.lower))
 print(list_four)
+
+character_new = ['James', "Jackie", "JAckie", "jackie", 'Natal', 'James', 'Boris', 'Xenia',
+                 'Alec']
+
+print(sorted(character_new))
+print(sorted(character_new, key=str.lower))
+print(character_new)
+print('character_new.index("Jackie").....', character_new.index("Jackie"))  # 1
+print('character_new.index("Jackie").....', character_new.index("James"))  # 0 - First index of occurrence
+
+# List concatenation
+list_six = list_two + list_four + [100, 101, 102]
+print("'list_six'..........", list_six)
+
+list_seven = [1, 2, 3, 4, 5]
+
+list_eight = [1, 2, 3]
+
+list_eight = list_seven + list_eight
+
+print("list_eight........", list_eight) # [1, 2, 3, 4, 5, 1, 2, 3]
+
+# Only concat will work.
+# list_nine = list_seven - list_eight # TypeError: unsupported operand type(s) for -: 'list' and 'list'
+# print(list_nine)
