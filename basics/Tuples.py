@@ -31,4 +31,10 @@ sorted_items = sorted(second_tuple)
 print(type(sorted_items))
 
 third_tuple = second_tuple + (2, 3, 4)
-print("third_tuple.........", third_tuple) # (31, 12, 33, 2, 3, 4)
+print("third_tuple.........", third_tuple)  # (31, 12, 33, 2, 3, 4)
+
+fourth_tuple = ((1, 2), (2, 3), (4, 5))
+print(fourth_tuple)
+
+fifth_tuple = (1, 2, 3, 4, 5, 6, 7, 8)
+print(fifth_tuple[2:6])

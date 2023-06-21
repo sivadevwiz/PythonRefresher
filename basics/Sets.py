@@ -46,4 +46,29 @@ print(1 in set3)
 
 # Set cannot have duplicate items
 set5 = {1, 1, 2, 2, 3, 3, 3}
-print(set5) # {1, 2, 3}
+print(set5)  # {1, 2, 3}
+
+# set6 = {{1, 2}, {2, 3}, [11, 2, 3], (2, 3, 4)} # TypeError: unhashable type: 'set'
+# set6 = {{1, 2}, {2, 4}} # TypeError: unhashable type: 'set'
+# set6 = {[1,2,3], 2,3} # TypeError: unhashable type: 'list'
+set6 = {(2, 3), (1, 2)}  # {(2, 3), (1, 2)}
+
+print(set6)
+print(type(set6))  # <class 'set'>
+
+# empty set will be always considered as dict
+set7 = {}
+print(type(set7))
+
+# adding items to set
+
+set8 = {1, 2, 3}
+set8.add(4)
+print(set8)
+
+
+# set8.add({5,6,7}) # Doesn't work
+# print(set8)
+
+# set8.add(4, 5, 6) # multiple items cannot be added
+# print(set8)
