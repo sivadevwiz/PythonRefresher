@@ -1,4 +1,5 @@
 """"
+Dictionaries - unordered , mutable
 1. Dictionaries - key value pairs
 2. uses curly braces
 """
@@ -6,6 +7,9 @@
 dog = {"name": "Roger", "age": 8, "address": {"street": "street1", "code": "001"}}
 
 print(dog)
+
+mydict = dict(name="Siva", age=34, city="chennai")
+print(mydict)
 
 # print(dog[1]) # KeyError: 1
 
@@ -48,6 +52,9 @@ dog_list = list(dog.values())
 print("dog_list.....", dog_list)
 print("type(dog_list).....", type(dog_list))  # <class 'list'>
 
+for key, value in dog.items():  # .items() is important
+    print(key, value)
+
 # items
 
 print("dog.items()...........",
@@ -67,6 +74,7 @@ print(dog)
 
 # Copy dictionary
 dog_copy = dog.copy()
+# dog_copy = dict(dog)
 print("dog_copy..........", dog_copy)
 
 # Adding items
@@ -90,4 +98,32 @@ print(dog)
 # dictionaries don't allow duplicates and just take the 2nd value of the same key value pair
 cat = {"name": "kitty", "age": 5, "age": 9}
 print("cat..........", cat)
+
+# update
+
+mydict = {"name": "Siva", "age": 33, "email": "test@tst.com"}
+mydict2 = dict(name="Siva", age=34, city="Chennai")
+
+mydict.update(mydict2)
+print("mydict.........", mydict)  # {'name': 'Siva', 'age': 34, 'email': 'test@tst.com', 'city': 'Chennai'}
+
+# dictionary without string
+
+dict_num = {1: 2, 2: 3, 3: 4}
+print(dict_num[1])  # here 1 is actual key and not the index
+
+mytuple = (8, 9)
+mydict3 = {mytuple: 14}
+
+print(mydict3)  # {(8, 9): 14}
+print(mydict3[(8, 9)])  # 14
+
+mylist = [8, 9]
+# mydict4 = {mylist: 14}
+
+# print(mydict4)  # TypeError: unhashable type: 'list' ; it won't work on List as they are mutable
+# print(mydict4[[8, 9]])
+
+mydict5 = {"list1": [1, 2, 3]}
+print(mydict5)
 

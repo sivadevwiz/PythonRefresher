@@ -1,3 +1,7 @@
+"""
+List - Ordered, Mutable, allows duplicate items
+"""
+
 list_one = [1, 2, 3]
 list_two = ["one", 2, "three", True]  # Lists can have different data types
 
@@ -18,6 +22,10 @@ print(list_two[:])  # ['one', 2, 'two', True]
 
 print(list_two[:3])  # ['one', 2, 'two']
 print(len(list_two))  # 4
+
+print("list_two[::1]", list_two[::1])
+print("list_two[::2]", list_two[::2])  # prints every 2nd item - step 2
+print("list_two[1::2]", list_two[1::2])
 
 list_two.append(5)
 print(list_two)  # ['one', 2, 'two', True, 5]
@@ -83,6 +91,21 @@ print("key=str.upper....",
       character_names)  # ['Alec', 'Boris', 'JAckie', 'Jackie', 'jackie', 'James', 'Natal', 'Xenia']
 
 # copying the items
+list_a = [1, 2, 3]
+list_b = list_a  # will have the same reference
+
+list_a.append(4)
+print("list_a", list_a)
+print("list_b", list_b)
+
+list_c = [1, 2, 3]
+# list_d = list_c.copy() # option 1
+# list_d = list_c[:] # option 2
+list_d = list(list_c)  # option 3
+list_c.append(4)
+print("list_c", list_c)  # [1, 2, 3, 4]
+print("list_d", list_d)  # [1, 2, 3]
+
 list_four = ["d", "a", "z", "s"]
 list_five = list_four[:]
 # list_four.sort()
@@ -114,8 +137,48 @@ list_eight = [1, 2, 3]
 
 list_eight = list_seven + list_eight
 
-print("list_eight........", list_eight) # [1, 2, 3, 4, 5, 1, 2, 3]
+print("list_eight........", list_eight)  # [1, 2, 3, 4, 5, 1, 2, 3]
 
 # Only concat will work.
 # list_nine = list_seven - list_eight # TypeError: unsupported operand type(s) for -: 'list' and 'list'
 # print(list_nine)
+
+# clear list
+
+list_nine = [1, 2, 3, 4, 5]
+
+print("list_nine", list_nine)
+list_nine.clear()
+print("list_nine", list_nine)
+
+# remove
+
+list_ten = [1, 2, 23, 4, 5, 5, 6]
+
+list_ten.remove(5)
+
+print("list_ten", list_ten)  # removes the first instance
+
+# reverse
+
+list_11 = [1, 2, 3, 4, 5]
+
+a = list_11[::-1]  # reverses the list
+
+print(a)
+
+list_11.reverse()
+
+print("list_11", list_11)
+
+# list arithmetic
+
+list_12 = [0] * 5
+
+print("list_12", list_12)
+
+# List comprehension
+
+list_13 = [1, 2, 3, 4, 5, 6]
+list_14 = [i * i for i in list_13]
+print("list_14.......", list_14)

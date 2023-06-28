@@ -3,6 +3,9 @@ Lambda functions
 1. Tiny functions with no name and are anonymous
 2. they will have only one expression as their body
 3. defined by the lambda keyword
+Structure:
+
+lambda arguments: expression
 """
 
 # here num is the argument and the expression is on the RHS of the colon
@@ -20,7 +23,7 @@ list_a = [1, 2, 3, 4, 5]
 def double(a):
     return a * 2
 
-
+# map(func, seq)
 # result = map(double, list_a)
 result = map(lambda num: num * 2, list_a)
 
